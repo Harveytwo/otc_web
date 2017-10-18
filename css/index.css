@@ -1,6 +1,6 @@
 .wrapper {
     position: relative;
-    min-width: 1152px;
+    min-width: 1200px;
     overflow: auto;
 }
 .wrapper > div >div {
@@ -75,9 +75,53 @@
     cursor: pointer;
 }
 .otc_user_action .change_lan {
+    position: relative;
     display: inline-block;
     cursor: pointer;
 }
+.otc_user_action .change_lan.unfold::after {
+        transform: rotate(45deg);
+        vertical-align: text-bottom;
+        top: 0;
+}
+.otc_user_action .change_lan.unfold .change_lan_item {
+    display: inline-block;
+}
+.change_lan .change_lan_item {
+    position: absolute;
+    z-index: 2;
+    width: 96px;
+    left: 0;
+    border-radius: 2px;
+    top: 33px;
+    display: none;
+}
+.change_lan .change_lan_item::after {
+    position: relative;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -4px;
+}
+.change_lan .change_lan_item p {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    height: 36px;
+    line-height: 36px;
+    background-color: #fff;
+}
+.change_lan .change_lan_item p:hover {
+    background-color: #2590f5;
+    color: #fff;
+}
+
 .change_lan::after {
     position: relative;
     top: 2px;
@@ -174,6 +218,13 @@
     height: 68px;
     line-height: 68px;
 }
+.otc_content_filter_word>div.unfold .otc_content_filter_word_wp {
+    display: inline-block;
+    z-index: 3;
+}
+.otc_content_filter_word>div.unfold::after {
+    transform: rotate(60deg);
+}
 .otc_content_filter .otc_content_filter_word > div:first-child {
     text-align: left;
     width: 84px;
@@ -187,10 +238,39 @@
 }
 .otc_content_filter_word_wp {
     position: absolute;
+    /*display: none;*/
+    width: 110px;
+    box-shadow: 0px 3px 16px 0px  rgba(32, 34, 37, 0.12);
     display: none;
+    top: 68px;
+    left: 0;
+}
+.otc_content_filter_word_wp::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -4px;
+}
+.otc_content_filter_word_wp  ul {
+
 }
 .otc_content_filter_word_wp li {
-
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    height: 36px;
+    line-height: 36px;
+    background-color: #fff;
+}
+.otc_content_filter_word_wp li:hover {
+        background-color: #2590f5;
+        color: #fff;
 }
 .otc_content_filter_word > div:last-child::before {
     display: none;
@@ -419,6 +499,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     vertical-align: middle;
+}
+.trade_rank_item_left img {
+    border-radius: 50%;
 }
 
 .trade_rank_item_left i {

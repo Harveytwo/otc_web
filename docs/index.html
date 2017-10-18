@@ -68,7 +68,15 @@
                 <div class="otc_user_action">
                     <span class="login">登录</span>
                     <span class="register">注册</span>
-                    <div class="change_lan">简体中文</div>
+                    <!-- change_lan 增加类名 unfold -->
+                    <div class="change_lan ">
+                        简体中文
+                        <div class="change_lan_item">
+                            <p>简体中文</p>
+                            <p>繁体中文</p>
+                            <p>English</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,19 +317,50 @@
                                     地区
                                     
                                 </div>
-                                <div>
+                                <!-- div 增加 unfold 类名展开 -->
+                                <div class="">
                                     交易方式
                                     <div class="otc_content_filter_word_wp">
                                         <ul>
-                                            <li>股交易方式1</li>
-                                            <li>股交易方式2</li>
-                                            <li>股交易方式3</li>
+                                            <li>所有</li>
+                                            <li>所有购买</li>
+                                            <li>所有出售</li>
+                                            <li>线上出售</li>
+                                            <li>线上购买</li>
+                                            <li>线下出售</li>
+                                            <li>线下购买</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div>BTC</div>
-                                <div>支付方式</div>
-                                <div>支持币种</div>
+                                <div>
+                                    BTC
+                                    <div class="otc_content_filter_word_wp">
+                                        <ul>
+                                            <li>所有</li>
+                                            <li>BTC</li>
+                                            <li>ETH</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    支付方式
+                                    <div class="otc_content_filter_word_wp">
+                                        <ul>
+                                            <li>所有</li>
+                                            <li>微信</li>
+                                            <li>支付宝</li>
+                                            <li>银行转账</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    支持币种
+                                    <div class="otc_content_filter_word_wp">
+                                        <ul>
+                                            <li>CNY</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="otc_content_filter_btn">搜索</div>
                         </div>
@@ -561,6 +600,12 @@
         $('.trade_rank_item_right span').on('click', function() {
             $(this).parents('.trade_rank_item').toggleClass('unfold').siblings().removeClass('unfold');
             // $('.trade_rank_lists ul').toggleClass('unfold_li');
+        })
+        $('.change_lan ').on('click', function() {
+            $(this).toggleClass('unfold');
+        })
+        $('.otc_content_filter_word>div').on('click', function() {
+            $(this).toggleClass('unfold').siblings().removeClass('unfold');
         })
     </script>
 </body>
