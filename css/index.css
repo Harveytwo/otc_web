@@ -21,9 +21,11 @@
 }
 .otc_logo {
     display: inline-block;
-    width: 134px;
+    width: 39px;
     height: 36px;
-    background-color: rgba(37, 144, 245, 1);
+    /*background-color: rgba(37, 144, 245, 1);*/
+    background: url(../images/logo.png) no-repeat;
+    background-size: cover;
 }
 .otc_nav ul {
     line-height: 72px;
@@ -183,6 +185,13 @@
     text-align: center;
     cursor: pointer;
 }
+.otc_content_filter_word_wp {
+    position: absolute;
+    display: none;
+}
+.otc_content_filter_word_wp li {
+
+}
 .otc_content_filter_word > div:last-child::before {
     display: none;
 }
@@ -230,7 +239,16 @@
     align-items: center;
     height: 80px;
 }
-
+.user_info {
+    width: 156px;
+}
+.user_info p {
+    max-width: 77px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
 .user_info img {
     border-radius: 50%;
     width: 44px;
@@ -394,6 +412,15 @@
     /*flex: 1;*/
     width: 222px;
 }
+
+.trade_rank_item_left>div p {
+    overflow: hidden;
+    max-width: 132px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
 .trade_rank_item_left i {
     display: inline-block;
     width: 20px;
@@ -456,6 +483,13 @@
     justify-content: space-between;
     margin-top: 13px;
     color: #3d3d3d;
+}
+.last_trade_lists li p {
+    width: 33%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
 }
 .last_trade_lists .trade_time {
     color: #aaaaaa;
