@@ -17,25 +17,25 @@
                 <ul>
                     <li>
                         <a href="javascript:;">
-                            交易
+                            发布广告
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            控制面板
+                            购买
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            钱包
+                            出售
                         </a>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            资讯行情
+                            帮助
                         </a>
                     </li>
-                    <li>
+                   <!--  <li>
                         <a href="javascript:;">
                             币兑换
                         </a>
@@ -44,7 +44,7 @@
                         <a href="javascript:;">
                             帮助
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -66,8 +66,22 @@
                     </p>
                 </div>
                 <div class="otc_user_action">
-                    <span class="login">登录</span>
-                    <span class="register">注册</span>
+                    <!-- 增加 hide 类名隐藏 -->
+                    <span class="login hide">登录</span>
+                    <span class="register hide">注册</span>
+                    <span class="my_wallet ">我的钱包</span>
+                    <!-- use_login 增加 undfold 类名展开-->
+                    <div class="use_login ">
+                        <img src="http://placeholder.qiniudn.com/27x27">
+                        <div class="use_login_name">
+                            <p>Younglee</p>
+                        </div>
+                        <div class="use_login_action">
+                                <p>个人中心</p>
+                                <p>我的广告</p>
+                                <p>退      出</p>
+                        </div>
+                    </div>
                     <!-- change_lan 增加类名 unfold -->
                     <div class="change_lan ">
                         简体中文
@@ -210,9 +224,9 @@
                         <div class="last_trade_lists">
                             <ul>
                                 <li>
-                                    <p>JamesWei</p>
+                                    <p>JamesWeiJamesWeiJamesWei</p>
                                     <p>线上购买</p>
-                                    <p class="trade_time">10分钟前</p>
+                                    <p class="trade_time">10分钟前10分钟前10分钟前</p>
                                 </li>
                                  <li>
                                     <p>JamesWei</p>
@@ -313,13 +327,25 @@
                     <div class="otc_content_inner">
                         <div class="otc_content_filter">
                             <div class="otc_content_filter_word">
-                                <div>
-                                    地区
-                                    
+                                <div class="otc_content_filter_word_item province">
+                                    <span>省份</span>
+                                     <div class="otc_content_filter_word_wp">
+                                        <ul>
+                                            <li>所有</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="otc_content_filter_word_item city">
+                                    <span>城市</span>
+                                     <div class="otc_content_filter_word_wp">
+                                        <ul>
+                                            <li>所有</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <!-- div 增加 unfold 类名展开 -->
-                                <div class="">
-                                    交易方式
+                                <div class="otc_content_filter_word_item">
+                                    <span>交易方式</span>
                                     <div class="otc_content_filter_word_wp">
                                         <ul>
                                             <li>所有</li>
@@ -332,8 +358,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div>
-                                    BTC
+                                <div class="otc_content_filter_word_item">
+                                    <span>BTC</span>
                                     <div class="otc_content_filter_word_wp">
                                         <ul>
                                             <li>所有</li>
@@ -342,8 +368,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div>
-                                    支付方式
+                                <div class="otc_content_filter_word_item">
+                                    <span>支付方式</span>
                                     <div class="otc_content_filter_word_wp">
                                         <ul>
                                             <li>所有</li>
@@ -353,8 +379,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div>
-                                    支持币种
+                                <div class="otc_content_filter_word_item">
+                                    <span>支持币种</span>
                                     <div class="otc_content_filter_word_wp">
                                         <ul>
                                             <li>CNY</li>
@@ -539,7 +565,7 @@
         </div>
         <!-- footer -->
         <div class="footer_wp">
-            <div class="footer">
+            <!-- <div class="footer">
                 <div class="footer_desc">
                     <p>OTCPLAT 让来自不同国家的人们安全快速地买卖比特币，首推对冲业务帮助用户规避价格波动风险，提供比特币资讯行情、区块浏览器等功能，让用户快速融入比特币世界</p>
                     <p class="otc_copyright">2017 OTCPLAT Ltd.</p>
@@ -590,6 +616,14 @@
                         <li><a href="javascript:;">新浪微博</a></li>
                     </ul>
                 </div>
+            </div> -->
+            <div class="footer02">
+                <div class="footer02_left">2017 OTCPLAT Ltd.</div>
+                <div class="footer02_right">
+                    <a href="javascript:;">关于我们</a>
+                    <a href="javascript:;">费率说明</a>
+                    <a href="javascript:;">常见问题</a>
+                </div>
             </div>
         </div>
     </div>
@@ -597,16 +631,7 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
     <script type="text/javascript">
-        $('.trade_rank_item_right span').on('click', function() {
-            $(this).parents('.trade_rank_item').toggleClass('unfold').siblings().removeClass('unfold');
-            // $('.trade_rank_lists ul').toggleClass('unfold_li');
-        })
-        $('.change_lan ').on('click', function() {
-            $(this).toggleClass('unfold');
-        })
-        $('.otc_content_filter_word>div').on('click', function() {
-            $(this).toggleClass('unfold').siblings().removeClass('unfold');
-        })
+        
     </script>
 </body>
 

@@ -7,6 +7,9 @@
     max-width: 1152px;
     margin: 0 auto;
 }
+.hide {
+    display: none !important;
+}
 
 /* 导航栏 */
 .otc_nav_wp {
@@ -67,36 +70,101 @@
     font-weight: bold;
 }
 .otc_user_action {
-    width: 288px;
+    max-width: 330px;
     text-align: right;
+    display: flex;
+    align-items: center;
+}
+.otc_user_action .use_login {
+    /*display: inline-block;*/
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    padding-right: 8px;
+    margin-right: 30px;
+    position: relative;
+    height: 48px;
+}
+
+.otc_user_action .use_login.unfold::after {
+    transform: rotate(45deg);
+    vertical-align: text-bottom;
+    top: 2px;
+}
+.use_login img {
+    width: 27px;
+    height:  27px;
+    margin-right: 6px;
+    border-radius: 50%;
+}
+.use_login_name p {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.use_login_name {
+    display: inline-block;
+    position: relative;
+}
+.use_login_action {
+    position: absolute;
+    /*display: none;*/
+    z-index: 6;
+}
+.use_login_action p{
+
+}
+.use_login::after {
+    position: relative;
+    top: 0;
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    margin-left: 10px;
+    vertical-align: text-top;
 }
 .otc_user_action span {
-    margin-right: 50px;
+    margin-right: 40px;
     cursor: pointer;
 }
 .otc_user_action .change_lan {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    height: 48px;
+    line-height: 48px;
 }
+
 .otc_user_action .change_lan.unfold::after {
         transform: rotate(45deg);
         vertical-align: text-bottom;
         top: 0;
 }
-.otc_user_action .change_lan.unfold .change_lan_item {
+.otc_user_action .change_lan.unfold .change_lan_item,
+.otc_user_action .use_login.unfold .use_login_action {
     display: inline-block;
 }
-.change_lan .change_lan_item {
+.change_lan .change_lan_item,
+.use_login_action {
     position: absolute;
     z-index: 2;
     width: 96px;
     left: 0;
     border-radius: 2px;
-    top: 33px;
+    top: 48px;
     display: none;
 }
-.change_lan .change_lan_item::after {
+.change_lan .change_lan_item::after,
+.use_login_action::after {
     position: relative;
     content: "";
     display: block;
@@ -109,7 +177,8 @@
     left: 50%;
     margin-left: -4px;
 }
-.change_lan .change_lan_item p {
+.change_lan .change_lan_item p,
+.use_login_action p {
     text-align: center;
     font-size: 12px;
     color: #aaa;
@@ -117,7 +186,8 @@
     line-height: 36px;
     background-color: #fff;
 }
-.change_lan .change_lan_item p:hover {
+.change_lan .change_lan_item p:hover,
+.use_login_action p:hover {
     background-color: #2590f5;
     color: #fff;
 }
@@ -227,14 +297,15 @@
 }
 .otc_content_filter .otc_content_filter_word > div:first-child {
     text-align: left;
-    width: 84px;
+    width: 74px;
 }
 .otc_content_filter .otc_content_filter_word > div {
     position: relative;
     display: inline-block;
-    width: 108px;
+    width: 100px;
     text-align: center;
     cursor: pointer;
+    color: #294c7f;
 }
 .otc_content_filter_word_wp {
     position: absolute;
@@ -258,8 +329,11 @@
     margin-left: -4px;
 }
 .otc_content_filter_word_wp  ul {
-
+    max-height: 250px;
+    overflow: auto;
 }
+.otc_content_filter_word_wp  ul::-webkit-scrollbar {display:none}
+
 .otc_content_filter_word_wp li {
     text-align: center;
     font-size: 12px;
@@ -296,6 +370,19 @@
     /*background-color: rgba(170, 170, 170, 1);*/
     background: url(../images/arrow.png) no-repeat;
     background-size: cover;
+}
+.otc_content_filter_word_item {
+    vertical-align: top;
+}
+.otc_content_filter_word_item span {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.province span {
+    max-width:  42px;
 }
 .otc_content_filter .otc_content_filter_btn {
     width: 74px;
@@ -378,6 +465,7 @@
     font-size: 0;
     padding-bottom: 16px;
     text-align: right;
+    padding-right: 24px;
 }
 .otc_content_pagination li {
     display: inline-block;
@@ -568,11 +656,18 @@
     color: #3d3d3d;
 }
 .last_trade_lists li p {
-    width: 33%;
+    max-width: 33%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     vertical-align: middle;
+}
+.last_trade_lists li p:first-child {
+    width: 33%;
+}
+.last_trade_lists li p:last-child {
+    text-align: right;
+    width: 33%;
 }
 .last_trade_lists .trade_time {
     color: #aaaaaa;
@@ -611,7 +706,19 @@
     padding-top:  30px;
     padding-bottom:  80px;
 }
-
+.footer02 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;;
+    height: 100px;
+}
+.footer02_right a::after {
+    content: '|';
+    margin: 0 6px 0 10px;
+}
+.footer02_right a:last-child::after {
+    display: none;
+}
 .footer_desc {
     width: 382px;
     font-size: 14px;
