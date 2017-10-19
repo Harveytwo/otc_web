@@ -380,8 +380,9 @@
     white-space: nowrap;
     vertical-align: middle;
     overflow: hidden;
+    max-width:  56px;
 }
-.province span {
+.otc_content_filter_word_item.province span {
     max-width:  42px;
 }
 .otc_content_filter .otc_content_filter_btn {
