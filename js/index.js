@@ -9,12 +9,19 @@ $('.change_lan,.use_login').on('mouseover', function() {
 })
 $('.change_lan_item p').on('click', function() {
     $('.change_lan ').removeClass('unfold');
+    $('.change_lan>i').text($(this).text());
 })
 $('.use_login p').on('click', function() {
     $('.use_login ').removeClass('unfold');
 })
 $('.otc_content_filter_word>div').on('click', function() {
     $(this).toggleClass('unfold').siblings().removeClass('unfold');
+})
+
+$('.otc_content_head a').on('click', function() {
+    var _index = $(this).index();
+    $(this).addClass('cur').siblings().removeClass('cur');
+    $('.otc_content_lists').eq(_index).removeClass('hide').siblings().addClass('hide');
 })
 
 // 地区选择
